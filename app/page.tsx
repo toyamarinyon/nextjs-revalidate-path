@@ -4,12 +4,12 @@ const currentDateTimestamp = async () => new Date().getTime();
 const sleep = async (ms: number) =>
   new Promise((resolve) => setTimeout(resolve, ms));
 export default async function Home() {
-  const res = await fetch("http://localhost:3000/api", {
-    next: {
-      tags: ["time"],
-    },
-  });
-  const now = await res.text();
+  // const res = await fetch("http://localhost:3000/api", {
+  //   next: {
+  //     tags: ["time"],
+  //   },
+  // });
+  // const now = await res.text();
 
   async function action() {
     "use server";
@@ -18,7 +18,7 @@ export default async function Home() {
 
   return (
     <div>
-      <p>{now}</p>
+      {/**<p>{now}</p>**/}
       <form action={action}>
         <button type="submit">Submit</button>
       </form>
